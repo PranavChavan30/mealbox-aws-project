@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MealBox - Food Ordering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">🍱 MealBox</div>
+    <a href="#order">Order Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Fresh food. Fast delivery.</h1>
+    <p>Order your favourites from MealBox.</p>
+    <a class="btn" href="#menu">Explore Menu</a>
+  </div>
+</section>
+
+<section id="menu" class="container">
+  <h2>Today's Menu</h2>
+  <div class="menu-grid">
+    <div class="card">
+      <img src="https://mealbox-images.s3.us-east-1.amazonaws.com/images/burger.svg" alt="Burger">
+      <h3>Classic Burger</h3>
+      <p>Juicy burger with fresh vegetables.</p>
+      <strong>₹199</strong>
+    </div>
+    <div class="card">
+      <img src="https://mealbox-images.s3.us-east-1.amazonaws.com/images/pizza.svg" alt="Pizza">
+      <h3>Cheese Pizza</h3>
+      <p>Cheesy pizza with a crispy base.</p>
+      <strong>₹299</strong>
+    </div>
+    <div class="card">
+      <img src="https://mealbox-images.s3.us-east-1.amazonaws.com/images/noodles.svg" alt="Noodles">
+      <h3>Spicy Noodles</h3>
+      <p>Hot and spicy noodles loaded with vegetables.</p>
+      <strong>₹149</strong>
+    </div>
+    <div class="card">
+      <img src="https://mealbox-images.s3.us-east-1.amazonaws.com/images/drink.svg" alt="Cold Drink">
+      <h3>Cold Drink</h3>
+      <p>Chilled refreshing drink.</p>
+      <strong>₹50</strong>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="order-section">
+  <div class="container">
+    <h2>Place Your Order</h2>
+    <form action="order.php" method="POST">
+      <label>Name</label>
+      <input type="text" name="customer_name" required>
+
+      <label>Mobile</label>
+      <input type="tel" name="mobile" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Food Item</label>
+      <select name="food_item" required>
+        <option value="">Select food</option>
+        <option value="Classic Burger">Classic Burger - ₹199</option>
+        <option value="Cheese Pizza">Cheese Pizza - ₹299</option>
+        <option value="Spicy Noodles">Spicy Noodles - ₹149</option>
+        <option value="Cold Drink">Cold Drink - ₹50</option>
+      </select>
+
+      <label>Quantity</label>
+      <input type="number" name="quantity" min="1" max="10" value="1" required>
+
+      <label>Delivery Address</label>
+      <textarea name="address" rows="4" required></textarea>
+
+      <button class="btn" type="submit">Place Order</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>MealBox © 2026 | Powered by AWS</p>
+</footer>
+</body>
+</html>
